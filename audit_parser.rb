@@ -775,7 +775,13 @@ def risk_score_overide_search
   end
 end
 
-abort("\n**The file doesn't exist. Please check file and try again\n") unless File.exists?(@options[:filename])
+# Start of program
+if @options.empty?
+  abort(my_parser.help)
+end
+
+# Abort if file doesn't exist
+abort("\n**The file doesn't exist. Please check the file and try again\n") unless File.exists?(@options[:filename])
 
 # Check if a date was provided
 @options[:date] ? @ref_date = '.*"occurred_at":"' + @options[:date] : @ref_date = ""
