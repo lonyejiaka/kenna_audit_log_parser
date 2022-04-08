@@ -5,14 +5,14 @@ While the log files offer rich detail about activities on the platform, customer
 This Kenna Audit Log parser aims to provide a tool by which customers can glean relevant information from the log files fairly easily. 
 Search flags are modularized and can be easily chained to produce very fine-grained information from the log files. 
 
-To get users familiar with the way to use / chain these search parameters, various samples are provided in this README.  
+To get users familiar with the way to use / chain these search parameters, various samples are provided further down in this README.  
 
 
 ## Usage
-The help page can be called by 
+The script contains Help documentation on how the script can be used. Some additional formatting is provided here to aid visibility.
 
 ```
-PS C:\Users\lewis\Documents\scripts\ruby\ruby_projects\audit_project> ruby .\audit_parser.rb --help
+ruby .\audit_parser.rb --help
 
 Kenna Audit Logs Parser. Usage: audit_parser.rb [options]
     -d, --date=DATE                  Narrow search to a particulate date. Format: YYYY-MM-DD
