@@ -5,6 +5,9 @@ While the log files offer rich detail about activities on the platform, customer
 This Kenna Audit Log parser aims to provide a tool by which customers can glean relevant information from the log files fairly easily. 
 Search flags are modularized and can be easily chained to produce very fine-grained information from the log files. 
 
+Note that users would first need to have downloaded the log file using the API, and extracted it to produce the json file which can then be parsed. 
+For users unfamiliar with any part of this download process, please see details in the Kenna help article here - https://help.kennasecurity.com/hc/en-us/articles/360030658612-Audit-Logs. 
+
 To get users familiar with the way to use / chain these search parameters, various samples are provided further down in this README.  
 
 
