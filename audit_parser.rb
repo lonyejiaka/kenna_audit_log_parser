@@ -351,7 +351,6 @@ def asset_search
     display_asset_results(reg_assetupdated)
   elsif @options[:username]
     reg_assetupdated = '{"details":{"asset_id":"' + ref_field + asset_extra_fields + '.*"user_email":"' + "#{@options[:username]}.*" + '"name":"AssetUpdated"' + @ref_date
-    puts reg_assetupdated
     reg_assetupdated = Regexp.new((reg_assetupdated), "i")
     display_asset_results(reg_assetupdated)
   else
@@ -571,9 +570,9 @@ def api_key_searches
       reg_apikeyrevoked = Regexp.new((reg_apikeyrevoked), "i")
       display_apikey_results(reg_apikeyrevoked)
     else
-      reg_apikeyrevoked = '{"details":{"target_user_id".*,"name":"ApiKeyCreated"' + @ref_date
+      reg_apikeyrevoked = '{"details":{"target_user_id".*,"name":"ApiKeyRevoked"' + @ref_date
       reg_apikeyrevoked = Regexp.new((reg_apikeyrevoked), "i")
-      display_apikey_results(reg_userupdated)
+      display_apikey_results(reg_apikeyrevoked)
     end
   when "all"
     if @options[:id]
@@ -775,12 +774,10 @@ def risk_score_overide_search
   end
 end
 
-# Start of program
 if @options.empty?
   abort(my_parser.help)
 end
 
-# Abort if file doesn't exist
 abort("\n**The file doesn't exist. Please check the file and try again\n") unless File.exists?(@options[:filename])
 
 # Check if a date was provided
@@ -791,6 +788,7 @@ when "risk_meters"
   risk_meter_search
 when "assets"
   asset_search
+  # test_asset_search
 when "vulns"
   vulns_search
 when "users"
